@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: 8
+          java-version: 17
       - uses: sbt/setup-sbt@v1
       - name: sbt test and packagedArtifacts for sbt 1.x
         run: |

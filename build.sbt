@@ -33,6 +33,7 @@ lazy val jacocoPlugin = (project in file("."))
       scalaBinaryVersion.value match {
         case "2.12" =>
           Seq(
+            "-release:8",
             "-Xfuture",
             "-Ywarn-adapted-args",
             "-Ywarn-dead-code"
@@ -96,12 +97,12 @@ ThisBuild / publishTo := (if (isSnapshot.value) None else localStaging.value)
 ThisBuild / publishMavenStyle := true
 ThisBuild / dynverSonatypeSnapshots := true
 
-crossScalaVersions += "3.7.4"
+crossScalaVersions += "3.8.1"
 pluginCrossBuild / sbtVersion := {
   scalaBinaryVersion.value match {
     case "2.12" =>
       sbtVersion.value
     case _ =>
-      "2.0.0-RC8"
+      "2.0.0-RC9"
   }
 }
